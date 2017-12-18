@@ -3,9 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-<title>Product</title>
+<title>Checkout</title>
 <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!--jQuery(necessary for Bootstrap's JavaScript plugins)-->
 <script src="../static/js/jquery-1.11.0.min.js"></script>
@@ -24,7 +25,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="../static/js/memenu.js"></script>
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>	
 <!--dropdown-->
-<script src="../static/js/jquery.easydropdown.js"></script>			
+<script src="../static/js/jquery.easydropdown.js"></script>	
+<style type="text/css">
+.hn{
+
+width:1000px;
+height:200px;
+float:left;
+margin-left:200px;
+margin-top:-50px;
+}
+table tr td{
+width:300px;
+height:30px;
+text-align: center;
+}
+table tr th{
+width:600px;
+text-align: center;
+}
+.ds{
+float:left;
+margin-left:295px;
+}
+</style>		
 </head>
 <body> 
 	<!--top-header-->
@@ -233,132 +257,113 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="breadcrumbs-main">
 				<ol class="breadcrumb">
 					<li><a href="index.jsp">Home</a></li>
-					<li class="active">New Products</li>
+					<li class="active">Checkout</li>
 				</ol>
 			</div>
 		</div>
 	</div>
 	<!--end-breadcrumbs-->
-	<!--prdt-starts-->
-	<div class="prdt"> 
+	<!--start-ckeckout-->
+	<div class="ckeckout">
 		<div class="container">
-			<div class="prdt-top">
-				<div class="col-md-9 prdt-left">
-				<c:forEach items="${list}" var="watch">
-					<div class="product-one">
-					
-						<div class="col-md-4 product-left p-left">
-							<div class="product-main simpleCart_shelfItem">
-							  
-								<a href="${ctx}/watch/productsDetail?id=${watch.id}&&name=${watch.name}" class="mask"><img class="img-responsive zoom-img" src="${watch.listimg}" alt="" /></a>
-								<div class="product-bottom">
-								
-									<h3><a href="${ctx}/watch/productsDetail">${watch.name}</a></h3>    
-									<p>Explore Now</p>
-									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">${watch.unitPrice}</span></h4>
-								</div>
-								<div class="srch srch1">
-									<span>-50%</span>
-							
-							</div>
-						</div>
-						<div class="clearfix"></div>
-						
-					</div>
-					</c:forEach>
-
-							<table border="1">
-								<tr><td>共${totalPages}页</td><td>第${pages}页</td>
-								<td><a href="${ctx}/watch/products?pages=${(pages<1)?pages:(pages-1)}">上一页</a></td>
-								<td><a href="${ctx}/watch/products?pages=${(pages>=totalPages)?pages:(pages+1)}">下一页</a></td>
-								</tr>
-							</table>
-			
-				</div>	
-				<div class="col-md-3 prdt-right">
-					<div class="w_sidebar">
-						<section  class="sky-form">
-							<h4>Catogories</h4>
-							<div class="row1 scroll-pane">
-								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Accessories</label>
-								</div>
-								<div class="col col-4">								
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Women Watches</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Kids Watches</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Men Watches</label>			
-								</div>
-							</div>
-						</section>
-						<section  class="sky-form">
-							<h4>Brand</h4>
-							<div class="row1 row2 scroll-pane">
-								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>kurtas</label>
-								</div>
-								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Sonata</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Titan</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Casio</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Omax</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>shree</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Fastrack</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Sports</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Fossil</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Maxima</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Yepme</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Citizen</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Diesel</label>									
-								</div>
-							</div>
-						</section>
-						<section class="sky-form">
-							<h4>Colour</h4>
-								<ul class="w_nav2">
-									<li><a class="color1" href="#"></a></li>
-									<li><a class="color2" href="#"></a></li>
-									<li><a class="color3" href="#"></a></li>
-									<li><a class="color4" href="#"></a></li>
-									<li><a class="color5" href="#"></a></li>
-									<li><a class="color6" href="#"></a></li>
-									<li><a class="color7" href="#"></a></li>
-									<li><a class="color8" href="#"></a></li>
-									<li><a class="color9" href="#"></a></li>
-									<li><a class="color10" href="#"></a></li>
-									<li><a class="color12" href="#"></a></li>
-									<li><a class="color13" href="#"></a></li>
-									<li><a class="color14" href="#"></a></li>
-									<li><a class="color15" href="#"></a></li>
-									<li><a class="color5" href="#"></a></li>
-									<li><a class="color6" href="#"></a></li>
-									<li><a class="color7" href="#"></a></li>
-									<li><a class="color8" href="#"></a></li>
-									<li><a class="color9" href="#"></a></li>
-									<li><a class="color10" href="#"></a></li>
-								</ul>
-						</section>
-						<section class="sky-form">
-							<h4>discount</h4>
-								<div class="row1 row2 scroll-pane">
-									<div class="col col-4">
-										<label class="radio"><input type="radio" name="radio" checked=""><i></i>60 % and above</label>
-										<label class="radio"><input type="radio" name="radio"><i></i>50 % and above</label>
-										<label class="radio"><input type="radio" name="radio"><i></i>40 % and above</label>
-									</div>
-									<div class="col col-4">
-										<label class="radio"><input type="radio" name="radio"><i></i>30 % and above</label>
-										<label class="radio"><input type="radio" name="radio"><i></i>20 % and above</label>
-										<label class="radio"><input type="radio" name="radio"><i></i>10 % and above</label>
-									</div>
-								</div>						
-						</section>
-					</div>
-				</div>
-				<div class="clearfix"></div>
+			<div class="ckeck-top heading">
+				<h2>CHECKOUT</h2>
 			</div>
+			<div class="ckeckout-top">
+			<div class="cart-items">
+			 <h3>My Shopping Bag </h3>
+				<script>$(document).ready(function(c) {
+					$('.close1').on('click', function(c){
+						$('.cart-header').fadeOut('slow', function(c){
+							$('.cart-header').remove();
+						});
+						});	  
+					});
+			   </script>
+			<script>$(document).ready(function(c) {
+					$('.close2').on('click', function(c){
+						$('.cart-header1').fadeOut('slow', function(c){
+							$('.cart-header1').remove();
+						});
+						});	  
+					});
+			   </script>
+			   <script>$(document).ready(function(c) {
+					$('.close3').on('click', function(c){
+						$('.cart-header2').fadeOut('slow', function(c){
+							$('.cart-header2').remove();
+						});
+						});	  
+					});
+			   </script>
+				
+			<div class="in-check" >
+			<div class="hn">
+
+<form action="${ctx}/watch/deleteAll" method="post">
+
+  <table >
+		<th>Watch </th><th>Count</th><th>State</th><th>Price</th><th>Delete</th><th>Detail</th></tr>
+	<c:forEach items="${map}" var="map">
+		<tr>
+		
+			<td>《${map.key}》</td>
+			<td>${map.value.count}</td>
+			<td>${map.value.state}</td>
+			<c:set var="pc" value="${map.value.count*map.value.unitPrice}"/>
+		    <td><c:out value="$ ${pc}"></c:out></td>
+		    <td><a href="${ctx}/watch/downWatch?id=${map.value.id}">Delete</a></td>
+			<td><a href="${ctx}/watch/orderDetail?id=${map.value.id}">查看订单详情</a></td>
+		</tr> 
+		</c:forEach>
+	</table>
+	
+	</form>
+	</div>
+<!-- 				<ul class="unit"> -->
+<!-- 					<li><span>Item</span></li> -->
+<!-- 					<li><span>Product Name</span></li>		 -->
+<!-- 					<li><span>Unit Price</span></li> -->
+<!-- 					<li><span>Delivery Details</span></li> -->
+<!-- 					<li> </li> -->
+<!-- 					<div class="clearfix"> </div> -->
+<!-- 				</ul> -->
+<!-- 				<ul class="cart-header"> -->
+<!-- 					<div class="close1"> </div> -->
+<!-- 						<li class="ring-in"><a href="single.jsp" ><img src="../static/images/c-1.jpg" class="img-responsive" alt=""></a> -->
+<!-- 						</li> -->
+<!-- 						<li><span class="name">Analog Watches</span></li> -->
+<!-- 						<li><span class="cost">$ 290.00</span></li> -->
+<!-- 						<li><span>Free</span> -->
+<!-- 						<p>zheyangdeshenghuo kongpaqianwuguren houwulaizheba</p>  -->
+<!-- 					<div class="clearfix"> </div>   <p>Delivered in 2-3 business days</p></li> -->
+<!-- 				</ul> -->
+<!-- 				<ul class=" cart-header1"> -->
+<!-- 					<div class="close2"> </div> -->
+<!-- 						<li class="ring-in"><a href="single.jsp" ><img src="../static/images/c-2.jpg" class="img-responsive" alt=""></a> -->
+<!-- 						</li> -->
+<!-- 						<li><span class="name">Analog Watches</span></li> -->
+<%-- 						<li><span class="cost">$ ${list.unitPrice}</span></li> --%>
+<!-- 						<li><span>Free</span> -->
+<!-- 						<p>Delivered in 2-3 business days</p></li> -->
+<!-- 						<div class="clearfix"> </div> -->
+<!-- 				</ul> -->
+<!-- 				<ul class="cart-header2"> -->
+<!-- 					<div class="close3"> </div> -->
+<!-- 						<li class="ring-in"><a href="single.jsp" ><img src="../static/images/c-3.jpg" class="img-responsive" alt=""></a> -->
+<!-- 						</li> -->
+<!-- 						<li><span class="name">Analog Watches</span></li> -->
+<!-- 						<li><span class="cost">$ 360.00</span></li> -->
+<!-- 						<li><span>Free</span> -->
+<!-- 						<p>Delivered in 2-3 business days</p></li> -->
+<!-- 						<div class="clearfix"> </div> -->
+<!-- 				</ul> -->
+			</div>
+			</div>  
+		 </div>
 		</div>
 	</div>
-	<!--product-end-->
+	<!--end-ckeckout-->
 	<!--information-starts-->
 	<div class="information">
 		<div class="container">

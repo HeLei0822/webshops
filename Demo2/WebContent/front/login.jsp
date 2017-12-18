@@ -250,7 +250,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>Existing User</h3>
 					<div class="account-bottom">
 					<form action="${ctx}/user/login" method="Post">
-						<input placeholder="Id" name="userId" type="text" tabindex="3" required>
+						<input placeholder="Id" name="userName" type="text" tabindex="3" required>
 						<input placeholder="Password" name="userPwd" type="password" tabindex="4" required>
 						<div class="address">
 							<a class="forgot" href="#">Forgot Your Password?</a>

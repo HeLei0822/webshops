@@ -19,4 +19,13 @@ public class UserServiceImpl {
 	public List<User> listAll(){
 		return this.userDaoImpl.findAll();
 	}
+	
+	public User login(String username,String password) {
+		User user = this.userDaoImpl.login(username, password);
+		return user;
+	}
+	
+	public User findUserByUserName(String userName) {
+		return this.userDaoImpl.findUserByUserName(userName);
+	}
 }

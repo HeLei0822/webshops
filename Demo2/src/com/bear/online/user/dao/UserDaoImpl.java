@@ -18,4 +18,23 @@ public class UserDaoImpl {
 		Query q = this.sessionFactory.getCurrentSession().createQuery("from User");
 		return q.list();
 	}
+	
+	public User login(String username,String password){
+		Query query = this.sessionFactory.getCurrentSession().createQuery("from User where userName=? and userPwd=?");
+		query.setParameter(0,username);
+		query.setParameter(1,password);
+		User user = (User) query.uniqueResult();
+		if(user!=null) {
+			return user;
+		}else {
+			System.out.println("userlogin Dao竃危。。。。。。。。。。。。。。。。。");
+			return null;
+		}
+	}
+	
+	public User findUserByUserName(String userName) {
+		Query query = this.sessionFactory.getCurrentSession().createQuery("fron User where userName=?");
+
+		return (User) query.uniqueResult();
+	}
 }

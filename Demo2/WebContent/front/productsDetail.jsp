@@ -274,14 +274,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="flexslider">
 							  <ul class="slides">
 							  
-								<li data-thumb="../static/images/s-1.jpg">
+								<li data-thumb="${watch.img1}">
 									<div class="thumb-image"> <img src="${watch.img1}" class="img-responsive" alt=""/> </div>
 								</li>
-								<li data-thumb="../static/images/s-2.jpg">
-									 <div class="thumb-image"> <img src="${param.img2}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								<li data-thumb="${watch.img2}">
+									 <div class="thumb-image"> <img src="${watch.img2}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
 								</li>
-								<li data-thumb="../static/images/s-3.jpg">
-								   <div class="thumb-image"> <img src="${param.img3}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								<li data-thumb="${watch.img3}">
+								   <div class="thumb-image"> <img src="${watch.img3}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
 								</li> 
 							
 							  </ul>
@@ -304,7 +304,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					
 					<div class="col-md-7 single-top-right">
 						<div class="single-para simpleCart_shelfItem">
-						<h2>Lorem Ipsum</h2>
+						<h2>${watch.name}</h2>
 							<div class="star-on">
 								<ul class="star-footer">
 										<li><a href="#"><i> </i></a></li>
@@ -320,24 +320,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"> </div>
 							</div>
 							
-							<h5 class="item_price">$ 95.00</h5>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+							<h5 class="item_price">$ ${watch.unitPrice}</h5>
+							<p>${watch.introduce}</p>
 							<div class="available">
 								<ul>
 									<li>Color
-										<select>
+										<select name="color">
 										<option>Silver</option>
 										<option>Black</option>
 										<option>Dark Black</option>
 										<option>Red</option>
 									</select></li>
-								<li class="size-in">Size<select>
+								<li class="size-in">Size<select name="size">
 									<option>Large</option>
 									<option>Medium</option>
 									<option>small</option>
 									<option>Large</option>
 									<option>small</option>
 								</select></li>
+								<td>数量：<input type="text" name="count" style="width: 50px" /><small style="color:rgb(169,169,169); font-family: 幼圆; font-size: 14px; ">请输入数量</small></td>
 								<div class="clearfix"> </div>
 							</ul>
 						</div>
@@ -347,7 +348,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li><span>SKU</span>
 								<span class="women1">: CK09</span></li>
 							</ul>
-								<a href="#" class="add-cart item_add">ADD TO CART</a>
+								<a href="${ctx}/watch/addShoppingcart?id=${watch.id}" class="add-cart item_add">ADD TO CART</a>
 							
 						</div>
 					</div>
@@ -398,7 +399,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="product-bottom">
 									<h3>Smart Watches</h3>
 									<p>Explore Now</p>
-									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 333</span></h4>
 								</div>
 								<div class="srch">
 									<span>-50%</span>
@@ -411,7 +412,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="product-bottom">
 									<h3>Smart Watches</h3>
 									<p>Explore Now</p>
-									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 550</span></h4>
 								</div>
 								<div class="srch">
 									<span>-50%</span>

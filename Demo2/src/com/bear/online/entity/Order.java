@@ -2,58 +2,60 @@ package com.bear.online.entity;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
-@Table(name="order")
+@Table(name="orders")
 public class Order {
 	private int orderId;
-	private String addr;
-	private Date orderdate;
-	private User userId;
-	private Orderitem orderitemId;
+	private int userId;
+	private String state;
+	private int id;
+	private int count;
+	private int UnitPrice;
+	private Date time;
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getOrderId() {
 		return orderId;
 	}
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-	public String getAddr() {
-		return addr;
-	}
-	public void setAddr(String addr) {
-		this.addr = addr;
-	}
-	public Date getOrderdate() {
-		return orderdate;
-	}
-	public void setOrderdate(Date orderdate) {
-		this.orderdate = orderdate;
-	}
-	
-	@ManyToOne
-	@JoinColumn(name="userId")
-	public User getUserId() {
+	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(User userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	@OneToOne
-	@JoinColumn(name="orderitemId")
-	public Orderitem getOrderitemId() {
-		return orderitemId;
+	public String getState() {
+		return state;
 	}
-	public void setOrderitemId(Orderitem orderitemId) {
-		this.orderitemId = orderitemId;
+	public void setState(String state) {
+		this.state = state;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public int getUnitPrice() {
+		return UnitPrice;
+	}
+	public void setUnitPrice(int unitPrice) {
+		UnitPrice = unitPrice;
+	}
+	public Date getTime() {
+		return time;
+	}
+	public void setTime(Date time) {
+		this.time = time;
 	}
 }

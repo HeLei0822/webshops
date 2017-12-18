@@ -1,10 +1,16 @@
 package com.bear.online.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="admin")
 public class Admin {
 
 	private int adminName;
 	private String adminPwd;
-	
+	@Id
 	public int getAdminName() {
 		return adminName;
 	}
